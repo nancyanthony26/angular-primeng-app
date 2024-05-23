@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "fullName": "Nancy",
+      "email": "Nancy@gmail.com",
+      "password": "Nancy@28",
+      "dateOfBirth": "28.11.1996",
+      "gender": "Female",
+      "city": "Chennai",
+      "id": "1"
+    },
+    {
+      "fullName": "Bryan",
+      "email": "Bryan@gmail.com",
+      "password": "Bryan10",
+      "dateOfBirth": "10.11.2022",
+      "gender": "Male",
+      "city": "Delhi",
+      "id": "2"
+    }
+  ]}

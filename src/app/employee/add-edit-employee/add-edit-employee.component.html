@@ -1,0 +1,93 @@
+<p-dialog
+  header="Add Employees"
+  [(visible)]="displayAddModal"
+  [modal]="true"
+  [style]="{ width: '50vw' }"
+  [draggable]="false"
+  [resizable]="false"
+  (onHide)="closeModal()"
+>
+  <form [formGroup]="employeeForm" class="employee-form">
+    <div class="field">
+      <label class="block" for="name">Name</label>
+      <input type="text" pInputText id="name" formControlName="name" />
+      <small
+        class="p-error block"
+        *ngIf="
+          employeeForm.controls['name'].invalid &&
+          employeeForm.controls['name'].dirty
+        "
+        >Field is required</small
+      >
+    </div>
+    <div class="field">
+        <label class="block" for="email">Email</label>
+        <input type="text" pInputText id="email" formControlName="email" />
+        <small
+          class="p-error block"
+          *ngIf="
+            employeeForm.controls['email'].invalid &&
+            employeeForm.controls['email'].dirty
+          "
+          >Field is required</small
+        >
+      </div>
+    <div class="field">
+      <label class="block">Gender</label>
+      <textarea pInputTextarea formControlName="Gender"></textarea>
+    </div>
+    <div class="field">
+      <label class="block" for="city">City</label>
+      <input type="text" pInputText id="city" formControlName="city" />
+      <small
+        class="p-error block"
+        *ngIf="
+          employeeForm.controls['city'].invalid &&
+          employeeForm.controls['city'].dirty
+        "
+        >Field is required</small
+      >
+    </div>
+    <div class="field">
+        <label class="block" for="technicalskills">Technicalskills</label>
+        <input type="text" pInputText id="technicalskills" formControlName="technicalskills" />
+        </div>
+    <div class="field">
+        <label class="block" for="role">Role</label>
+        <input type="text" pInputText id="role" formControlName="role" />
+        <small
+          class="p-error block"
+          *ngIf="
+            employeeForm.controls['role'].invalid &&
+            employeeForm.controls['role'].dirty
+          "
+          >Field is required</small
+        >
+      </div>
+      <div class="field">
+        <label class="block" for="workexperience">Workexperience</label>
+        <input type="text" pInputText id="workexperience" formControlName="workexperience" />
+        <small
+          class="p-error block"
+          *ngIf="
+            employeeForm.controls['workexperience'].invalid &&
+            employeeForm.controls['workexperience'].dirty
+          "
+          >Field is required</small
+        >
+      </div>
+  </form>
+  <ng-template pTemplate="footer">
+    <p-button
+      (click)="closeModal()"
+      label="Cancel"
+      styleClass="p-button-text"
+    ></p-button>
+
+    <p-button
+    (click)="addEmployee()"
+    label="Add"
+    [disabled]="employeeForm.invalid"
+  ></p-button>
+</ng-template>
+</p-dialog>
